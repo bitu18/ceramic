@@ -1,0 +1,120 @@
+$min-height-img: 222px;
+
+.wrapper {
+    position: relative;
+    background: url(../../assets/imgs/frameProduct.png) center center / contain no-repeat;
+    height: 300px;
+    transition: all 0.4s ease-out;
+
+    & + .wrapper {
+        margin-top: 50px;
+    }
+
+    &:hover .img {
+        transform: translate(-50%) scale(1.1);
+        filter: brightness(110%);
+    }
+
+    &:hover .btn {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+    &:hover .price {
+        transform: translateX(-40%);
+        opacity: 0;
+    }
+}
+.infor {
+}
+.tag {
+    position: absolute;
+    right: 26px;
+    top: 40px;
+    z-index: 10;
+}
+.discount,
+.new,
+.hot {
+    color: var(--white-color);
+    font-size: 1.7rem;
+    border-radius: 5px;
+    margin: 2px 0;
+    text-align: center;
+    width: 46px;
+}
+.discount {
+    background-color: #807832;
+}
+.new {
+    background-color: var(--primary-color-bold);
+}
+.hot {
+    background-color: var(--primary-color-red);
+}
+.wrapper-img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: $min-height-img;
+}
+.img {
+    position: relative;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.4s ease-out, filter 0.4s ease-out;
+    animation: zoomOutOpacity 0.3s ease-in-out;
+}
+.description {
+    position: absolute;
+    top: calc($min-height-img - 15px);
+    left: 10%;
+}
+.name {
+    font-family: Water Brush, cursive;
+    font-size: 2.4rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.price {
+    transform: translateX(0%);
+    opacity: 1;
+    transition: transform linear 0.4s, opacity 0.4s linear;
+}
+.new-price {
+    font-size: 2rem;
+}
+.old-price {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+}
+
+.btn {
+    position: absolute;
+    top: 34px;
+    padding: 0px 12px;
+    text-transform: uppercase;
+    font-size: 1.9rem;
+    font-weight: 500;
+    border-radius: 0;
+    width: 127px;
+
+    transform: translateX(-40%);
+    opacity: 0;
+
+    transition: transform linear 0.4s, opacity 0.4s linear;
+}
+
+@keyframes zoomOutOpacity {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+}

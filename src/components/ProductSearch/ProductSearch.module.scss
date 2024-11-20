@@ -1,0 +1,28 @@
+.wrapper {
+    display: flex;
+    padding: 6px 2px;
+
+    &:hover {
+        background-color: var(--primary-color-light);
+    }
+}
+.img {
+    width: 140px;
+    height: 100px;
+    object-fit: contain;
+}
+.infor {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--primary-color);
+    line-height: 1.2;
+    cursor: pointer;
+}
+.name {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.price {
+}

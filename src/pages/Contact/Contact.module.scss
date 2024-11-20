@@ -1,0 +1,74 @@
+.wrapper {
+    padding-bottom: 48px;
+}
+.background {
+    position: relative;
+    margin: 0 -40px 20px -40px;
+}
+.img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    // opacity: 0.7;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(../../assets/imgs/contactImg.jpg) center center / cover no-repeat;
+}
+
+.contact {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white-color);
+    text-align: center;
+
+    h2 {
+        font-size: 4rem;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+    }
+
+    p {
+        font-size: 2rem;
+    }
+}
+
+.contact-store {
+    display: flex;
+    justify-content: space-around;
+}
+.contact-element {
+    border: 5px double var(--primary-color-bold);
+    color: var(--primary-color-bold);
+    height: 100%;
+    padding: 20px;
+    font-family: Poppins, sans-serif;
+    -webkit-transform: skew(-3deg);
+    transform: skew(-3deg);
+}
+.name {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.address,
+.phone-number,
+.fax,
+.email,
+.website {
+    font-size: 2rem;
+}
+.email > span {
+    cursor: pointer;
+
+    &:hover {
+        color: var(--text-color);
+    }
+}
+.website > a {
+    color: var(--primary-color-bold);
+
+    &:hover {
+        color: var(--text-color);
+    }
+}

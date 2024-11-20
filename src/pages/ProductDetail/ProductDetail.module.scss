@@ -1,0 +1,122 @@
+.wrapper {
+}
+.img {
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+}
+
+.infor {
+    position: relative;
+    background-color: var(--primary-color-light);
+    border-radius: 8px;
+}
+
+.img,
+.infor {
+    max-height: 500px;
+}
+
+.name {
+    font-family: Water Brush, cursive;
+    font-size: 5rem;
+    margin: 30px 0 10px;
+    text-align: center;
+}
+.price {
+    display: flex;
+}
+
+.new-price,
+.old-price,
+.origin,
+.type {
+    font-size: 2rem;
+    margin: 0 5px 15px 0;
+}
+.old-price {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    margin-top: 5px;
+}
+.wrapper-counter {
+    display: flex;
+    align-items: center;
+}
+.count {
+    font-size: 2rem;
+}
+.counter {
+    border: 1px solid #000;
+    margin-left: 40px;
+}
+.minus,
+.input,
+.plus {
+    width: 35px;
+    height: 35px;
+    border-radius: 0;
+    cursor: pointer;
+}
+.minus {
+    background-color: #b4d1e8;
+}
+.input {
+    background-color: #ebebf0;
+    text-align: center;
+}
+.plus {
+    background-color: #b4d1e8;
+}
+
+.btn {
+    position: absolute;
+    height: 60px;
+    width: 90%;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 6px;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 300;
+    transition: all 0.4s ease-out;
+    cursor: pointer;
+
+    &:hover {
+        filter: brightness(150%);
+    }
+}
+
+.des {
+    background-color: var(--primary-color-light);
+    margin-top: 20px;
+    border-radius: 8px;
+
+    h3 {
+        font-size: 2.4rem;
+        margin: 20px 0;
+    }
+
+    p {
+        font-size: 1.8rem;
+        margin-bottom: 18px;
+    }
+}
+
+.product-best {
+    padding-bottom: 20px;
+    h2 {
+        margin: 22px 0;
+    }
+}
+
+.container {
+}

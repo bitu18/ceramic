@@ -1,0 +1,65 @@
+.wrapper {
+    background-color: #fff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 400px;
+    transition: all 0.2s ease;
+    z-index: 999;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.2s ease-in-out, opacity 0.2s linear;
+}
+
+.wrapper.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.cart {
+    color: #333;
+    font-size: 2rem;
+    padding-top: 10px;
+    text-align: center;
+    // font-weight: 400;
+    color: var(--primary-color-bold);
+}
+
+.cart-bottom {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+}
+.total-all {
+    margin: 10px auto;
+    font-weight: 600;
+}
+.btn {
+    height: 46px;
+    min-width: 180px;
+    border-radius: 0;
+}
+
+.btn-close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 35px;
+    font-size: 2.2rem;
+    color: var(--primary-color-bold);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: opacity 0.2s linear;
+    opacity: 1;
+}

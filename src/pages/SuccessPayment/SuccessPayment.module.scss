@@ -1,0 +1,28 @@
+.wrapper {
+    width: 600px;
+    border-radius: 6px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    text-align: center;
+
+    .popper {
+        padding: 20px;
+    }
+}
+
+.icon {
+    color: #4bb543;
+    font-size: 20rem;
+}
+.content {
+    h3 {
+        text-transform: uppercase;
+        margin: 14px 0;
+    }
+    p {
+        margin: 14px 0;
+    }
+    a {
+        color: #4bb543;
+    }
+}

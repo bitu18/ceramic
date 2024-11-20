@@ -1,0 +1,92 @@
+$width-toast: 300px;
+$max-width-toast: 350px;
+$height-toast: 64px;
+$toast-color-text: #757575;
+$toast-success: #07bc0c;
+$toast-error: #e74c3c;
+
+.container {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index: 999;
+}
+.wrapper {
+    min-width: $width-toast;
+    max-width: $max-width-toast;
+    height: $height-toast;
+    background-color: var(--white-color);
+    padding: 10px 10px 10px 5px;
+    border-radius: 4px;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1), 0 2px 15px 0 rgba(0, 0, 0, 0.05);
+    margin-bottom: 10px;
+    transform: translateX(calc(100% + 20px));
+    // transition: transform 0.8s ease, opacity 0.4s ease;
+    opacity: 0;
+    animation: slideLeft 0.4s ease forwards;
+
+    &.fade-out {
+        animation: slideRight 0.4s ease forwards;
+    }
+}
+
+.success {
+    border-left: 6px solid $toast-success;
+}
+.error {
+    border-left: 6px solid $toast-error;
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.check {
+    height: 20px;
+    margin-right: 10px;
+}
+.check--success {
+    color: $toast-success;
+}
+.check--error {
+    color: $toast-error;
+}
+.text {
+    color: var($toast-color-text);
+    flex-grow: 1;
+}
+.delete {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 8px;
+    color: var(--black-color);
+    opacity: 0.3;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.6rem;
+}
+
+// animations
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(calc(100% + 20px));
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(calc(100% + 20px));
+    }
+}

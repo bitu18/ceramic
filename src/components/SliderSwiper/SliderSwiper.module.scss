@@ -1,0 +1,7 @@
+swiper-container {
+    width: 100%;
+
+    // Apply CSS variables for swiper customization
+    --swiper-navigation-color: var(--primary-color-bold);
+    --swiper-pagination-color: var(--primary-color-bold);
+}

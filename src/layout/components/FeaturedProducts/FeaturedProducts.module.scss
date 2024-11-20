@@ -1,0 +1,60 @@
+.wrapper {
+    display: grid;
+    grid-template-areas:
+        'feater-product-0 line-between feater-product-1'
+        'feater-product-2 line-between feater-product-3'
+        'feater-product-4 line-between feater-product-5';
+    grid-template-columns: 1.25fr 0.4fr 1.25fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    position: relative;
+    top: -28px;
+}
+.feater-product {
+    display: flex;
+    height: 320px;
+    padding: 10px;
+
+    &:hover .img {
+        filter: brightness(110%);
+        transform: scale(1.05);
+    }
+}
+.feater-product:nth-of-type(2n) {
+    flex-direction: row-reverse;
+}
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform ease-out 0.4s, filter ease-out 0.4s;
+    cursor: pointer;
+}
+.content {
+    width: 40%;
+    text-align: center;
+}
+.name {
+    font-family: Water Brush, cursive;
+    font-size: 3.4rem;
+    margin: 34px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.price {
+    color: var(--primary-color-bold);
+}
+.description {
+    color: var(--primary-color-bold);
+    margin: 15px 0;
+    line-height: 1.15;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.line-between {
+    grid-area: line-between;
+    background: url(../../../assets/imgs/line-between.png) center center / contain;
+}

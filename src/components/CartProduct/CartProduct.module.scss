@@ -1,0 +1,79 @@
+.list-product {
+    max-height: 360px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--primary-color-bold);
+        border-radius: 4px;
+    }
+}
+.item-product {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    overflow: hidden;
+
+    &:hover {
+        background-color: var(--primary-color-light);
+    }
+    &:hover .btn-delete {
+        transform: translateX(0);
+    }
+}
+.img {
+    width: 140px;
+    height: 100px;
+    object-fit: contain;
+}
+.product-infor {
+}
+.name {
+    font-size: 1.8rem;
+    display: -webkit-box;
+    -webkit-box-direction: column;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.price,
+.count {
+    color: var(--primary-color-bold);
+    margin-right: 10px;
+}
+.counter {
+    display: flex;
+}
+.minus,
+.plus {
+    background-color: #b4d1e8;
+    border-radius: 25%;
+    color: var(--white-color);
+    cursor: pointer;
+    font-size: 2rem;
+    height: 100%;
+    width: 24px;
+}
+.input {
+    height: 100%;
+    text-align: center;
+    width: 30px;
+    font-size: 2rem;
+    color: var(--primary-color-bold);
+    background-color: transparent;
+}
+.totalPerEach {
+}
+.btn-delete {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    min-width: 40px;
+    background-color: #e6cace;
+    color: #803242;
+    visibility: visible;
+    border-radius: 0;
+    justify-content: unset;
+    transform: translateX(100%);
+    transition: all 0.2s ease-out;
+}

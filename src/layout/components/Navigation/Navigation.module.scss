@@ -1,0 +1,40 @@
+.navigation {
+    display: flex;
+    flex: 1 1;
+    align-items: center;
+
+    li {
+        margin: 0 10px;
+    }
+}
+
+.nav-item {
+    position: relative;
+    font-weight: 600;
+    padding: 5px 0 2px 0;
+    color: #444;
+
+    &:hover {
+        color: var(--primary-color-bold);
+    }
+
+    &::after {
+        position: absolute;
+        content: '';
+        bottom: -2px;
+        height: 2px;
+        background-color: var(--primary-color-bold);
+        left: 50%; // start from left (center)
+        width: 0;
+        transition: width 0.2s ease, left 0.3s ease;
+        transform: translateX(-50%);
+    }
+}
+.active {
+    color: var(--primary-color-bold);
+
+    &::after {
+        width: 100%;
+        left: 50%;
+    }
+}

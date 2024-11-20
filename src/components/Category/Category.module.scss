@@ -1,0 +1,28 @@
+.wrapper-category {
+    background-color: #e7f2fbcc;
+    min-height: 111px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.wrapper-item {
+    font-family: Water Brush, cursive;
+    width: 120px;
+    font-size: 2rem;
+    padding: 0;
+    border: 0;
+    text-align: center;
+}
+.img {
+    width: 84px;
+    // transition: transform 0.5s ease-out;
+
+    &:hover {
+        filter: brightness(105%);
+        transform: scale(1.04);
+    }
+}
+.title {
+    color: var(--primary-color-bold);
+    margin-top: -12px;
+}

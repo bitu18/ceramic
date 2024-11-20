@@ -1,0 +1,25 @@
+.new-item {
+    background-color: var(--primary-color-light);
+    min-height: 1000px;
+    padding: 50px;
+    margin: 40px 0;
+}
+
+.date {
+    text-align: right;
+    margin: 20px 0;
+}
+.title {
+    font-family: Water Brush, cursive;
+    color: var(--primary-color-bold);
+    font-size: 5rem;
+    text-align: center;
+}
+.des {
+    margin: 20px 0;
+    font-size: 2rem;
+    text-align: justify;
+}
+.img {
+    width: 100%;
+}

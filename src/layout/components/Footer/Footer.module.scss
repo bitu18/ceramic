@@ -1,0 +1,49 @@
+.wrapper {
+    background: linear-gradient(rgba(231, 242, 251, 0.9), rgba(231, 242, 251, 0.8)),
+        url('../../../assets/imgs/Footer.jpg') center center / cover no-repeat;
+    height: 280px;
+    padding: 40px 0;
+    position: relative;
+
+    p + p {
+        margin: 12px 0;
+    }
+}
+
+.email {
+    cursor: pointer;
+
+    &:hover {
+        color: var(--primary-color-bold);
+    }
+}
+.infor-shop {
+    text-align: center;
+}
+
+.website:hover > a {
+    color: var(--primary-color-bold);
+}
+
+.strong-text {
+    font-weight: bolder;
+}
+
+.logo {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        height: 130px;
+    }
+}
+
+.copyright {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 6px 0;
+}
