@@ -1,10 +1,8 @@
 import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
-import ReactFacebookLogin from 'react-facebook-login';
 import classNames from 'classnames/bind';
 import styles from './LogIn.module.scss';
 import img from '~/assets/imgs';
-import Button from '~/components/Button';
 import { useUserInfor } from '~/components/store';
 import { useNavigate } from 'react-router-dom';
 
@@ -50,18 +48,6 @@ function LogIn() {
                         />
                     </GoogleOAuthProvider>
                 </div>
-                {/* 
-                <div className={cx('btn')}>
-                    <ReactFacebookLogin
-                        appId="your-facebook-app-id" // Replace with your Facebook App ID
-                        autoLoad={false}
-                        fields="name,email,picture"
-                        callback={handleFacebookLogin}
-                        onFailure={handleFacebookError}
-                        textButton="Đăng nhập bằng Facebook"
-                        icon="fa-facebook"
-                    />
-                </div> */}
 
                 {/* <Button rounded large className={cx('btn')}>
                     Đăng nhập bằng Facebook
