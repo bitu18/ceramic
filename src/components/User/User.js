@@ -7,6 +7,7 @@ import Button from '../Button';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import routes from '~/config/routes';
+import { googleLogout } from '@react-oauth/google';
 
 const cx = classNames.bind(styles);
 function User() {
@@ -16,11 +17,11 @@ function User() {
     const show = () => setVisible(true);
     const hide = () => setVisible(false);
 
-    const handleLogOut = () => {
+    const handleGoogleLogOut = () => {
+        googleLogout();
         setUser(null);
         localStorage.removeItem('user');
 
-        window.location.reload();
         window.location.href = '/';
     };
 
@@ -38,9 +39,9 @@ function User() {
                                 <Link to={routes.order} onClick={hide} className={cx('btn')}>
                                     Đơn Hàng
                                 </Link>
-                                <Link className={cx('btn')} onClick={handleLogOut}>
+                                <Button className={cx('btn')} onClick={handleGoogleLogOut}>
                                     Đăng xuất
-                                </Link>
+                                </Button>
                             </Popper>
                         </div>
                     )

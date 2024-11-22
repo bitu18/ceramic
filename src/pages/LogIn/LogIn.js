@@ -1,37 +1,54 @@
-import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
+import { useGoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
 import classNames from 'classnames/bind';
 import styles from './LogIn.module.scss';
 import img from '~/assets/imgs';
 import { useUserInfor } from '~/components/store';
 import { useNavigate } from 'react-router-dom';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 function LogIn() {
     const { setUser } = useUserInfor();
     const navigate = useNavigate();
 
-    const handleSuccess = (response) => {
-        const decoded = jwtDecode(response.credential); // decode credentials to get user's information
-        console.log(decoded);
-        setUser({
-            name: decoded.name,
-            avatar: decoded.avatar,
-        });
+    const handleGoogleLogIn = useGoogleLogin({
+        onSuccess: async (tokenResponse) => {
+            try {
+                // Fetch user info from Google's API
+                const response = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+                    headers: {
+                        Authorization: `Bearer ${tokenResponse.access_token}`,
+                    },
+                });
 
-        localStorage.setItem(
-            'user',
-            JSON.stringify({
-                name: decoded.name,
-                avatar: decoded.picture,
-            }),
-        );
-        navigate('/');
-    };
+                const userInfo = await response.json();
 
-    const handleError = () => {
-        console.log('Google login failed');
-    };
+                // Update global store and localStorage
+                setUser({
+                    name: userInfo.name,
+                    avatar: userInfo.picture,
+                });
+
+                localStorage.setItem(
+                    'user',
+                    JSON.stringify({
+                        name: userInfo.name,
+                        avatar: userInfo.picture,
+                    }),
+                );
+
+                // Navigate to home
+                navigate('/');
+            } catch (error) {
+                console.error('Error fetching Google user info:', error);
+            }
+        },
+        onError: () => {
+            console.error('Google login failed');
+        },
+    });
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('form')}>
@@ -39,25 +56,13 @@ function LogIn() {
                 <p className={cx('des')}>Hãy đăng nhập để bắt đầu đặt hàng!</p>
                 <h1 className={cx('title')}>Đăng nhập</h1>
 
-                <div className={cx('btn')}>
-                    <GoogleOAuthProvider clientId="542258222683-k64hdtdjnuefslalovlkq4tvj6e4nodp.apps.googleusercontent.com">
-                        <GoogleLogin
-                            onSuccess={handleSuccess}
-                            onError={handleError}
-                            cookiePolicy="single_host_origin"
-                        />
-                    </GoogleOAuthProvider>
-                </div>
-
                 {/* <Button rounded large className={cx('btn')}>
                     Đăng nhập bằng Facebook
                 </Button> */}
 
-                {/* render={(renderProps) => (
-                            <Button onClick={renderProps.onClick} rounded large className={cx('btn')}>
-                                Đăng nhập bằng Google
-                            </Button>
-                        )} */}
+                <Button rounded large className={cx('btn')} onClick={handleGoogleLogIn}>
+                    Đăng nhập bằng Google
+                </Button>
             </div>
         </div>
     );
